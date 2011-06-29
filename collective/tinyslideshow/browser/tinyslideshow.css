@@ -81,7 +81,7 @@
 #slideleft {
 	float:left;
 	width:20px;
-	height:81px;
+	height:96px;
 	background:url(++resource++collective.tinyslideshow/scroll-left.gif) center center no-repeat;
 }
 #slideleft:hover {
@@ -99,7 +99,7 @@
 	position:relative;
 	width:456px;
 	margin-left:5px;
-	height:81px;
+	height:128px;
 	overflow:hidden;
 }
 #slider {
