@@ -21,6 +21,7 @@
   <browser:page
     name="tinyslideshow.html"
     for="collective.gallery.interfaces.IFolder"
+    class=".tinyslideshow.TinySlideshow"
     menu="plone_displayviews"
     title="TinySlideshow"
     permission="zope.Public"
@@ -30,6 +31,7 @@
   <browser:page
     name="tinyslideshow.html"
     for="collective.gallery.interfaces.ITopic"
+    class=".tinyslideshow.TinySlideshow"
     menu="plone_displayviews"
     title="TinySlideshow"
     permission="zope.Public"
@@ -39,6 +41,7 @@
   <browser:page
     name="tinyslideshow.html"
     for="collective.gallery.interfaces.ILink"
+    class=".tinyslideshow.TinySlideshow"
     menu="plone_displayviews"
     title="TinySlideshow"
     permission="zope.Public"

@@ -30,19 +30,26 @@
             <div id="slideright" title="Slide Right"></div>
         </div>
     </div>
+    <script type="text/javascript" tal:content="view/settings_javascripts">
+    </script>
     <script type="text/javascript">
     $('slideshow').style.display='none';
     $('wrapper').style.display='block';
     var slideshow=new TINY.slideshow("slideshow");
     window.onload=function(){
-        slideshow.auto=true;
-        slideshow.speed=5;
+        slideshow.imgSpeed=slideshowconfig['imgSpeed'];
+        slideshow.navOpacity=slideshowconfig['navOpacity'];
+        slideshow.navHover=slideshowconfig['navHover'];
+        slideshow.auto=slideshowconfig['auto'];
+        slideshow.speed=slideshowconfig['speed'];
+        slideshow.infoSpeed=slideshowconfig['infoSpeed'];
+        slideshow.scrollSpeed=slideshowconfig['scrollSpeed'];
+        slideshow.thumbOpacity=slideshowconfig['thumbOpacity'];
         slideshow.link="linkhover";
         slideshow.info="information";
         slideshow.thumbs="slider";
         slideshow.left="slideleft";
         slideshow.right="slideright";
-        slideshow.scrollSpeed=4;
         slideshow.spacing=5;
         slideshow.active="#fff";
         slideshow.init("slideshow","image","imgprev","imgnext","imglink");

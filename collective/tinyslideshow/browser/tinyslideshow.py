@@ -54,12 +54,11 @@ class ITinySlideshowSettings(interface.Interface):
                             default=70)
     #Scroll
     auto  = schema.Bool(title=i18n.auto,
-                       default=False)
+                       default=True)
     speed = schema.Int(title=i18n.speed,
                        default=10)
     #Thumbnail
-    info  = schema.Bool(title=i18n.info,
-                       default=True)
+
     infoSpeed   = schema.Int(title=i18n.infoSpeed,
                              default=10)
     scrollSpeed = schema.Int(title=i18n.scrollSpeed,
@@ -69,3 +68,5 @@ class ITinySlideshowSettings(interface.Interface):
 
 class TinySlideshow(ConfigurableBaseView):
     settings_schema = ITinySlideshowSettings
+    jsvarname = 'slideshowconfig'
+    settings_providers = ('context.zope.annotation',)
