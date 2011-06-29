@@ -17,7 +17,7 @@ setup(name='collective.tinyslideshow',
       keywords='',
       author='JeanMichel FRANCOIS aka toutpt',
       author_email='toutpt@gmail.com',
-      url='http://svn.plone.org/svn/collective/',
+      url='https://github.com/collective/collective.tinyslideshow',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['collective'],
@@ -25,6 +25,8 @@ setup(name='collective.tinyslideshow',
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'collective.gallery',
+          'collective.configviews',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
@@ -33,6 +35,4 @@ setup(name='collective.tinyslideshow',
       [z3c.autoinclude.plugin]
       target = plone
       """,
-      setup_requires=["PasteScript"],
-      paster_plugins=["ZopeSkel"],
       )

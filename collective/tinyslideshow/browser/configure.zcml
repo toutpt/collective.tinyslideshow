@@ -2,15 +2,22 @@
            xmlns:browser="http://namespaces.zope.org/browser"
            i18n_domain="collective.tinyslideshow">
     <!-- -*- extra stuff goes here -*- -->
+  <include package="plone.app.contentmenu" />
   <browser:resource
     name="collective.tinyslideshow.css"
-    file="tinyslideshow.css"/>
+    file="tinyslideshow.css"
+    layer="..interfaces.ITinySlideshowLayer"
+    />
   <browser:resource
     name="collective.tinyslideshow.js"
-    file="tinyslideshow.js"/>
+    file="tinyslideshow.js"
+    layer="..interfaces.ITinySlideshowLayer"
+    />
   <browser:resourceDirectory
     name="collective.tinyslideshow"
-    directory="images"/>
+    directory="images"
+    layer="..interfaces.ITinySlideshowLayer"
+    />
   <browser:page
     name="tinyslideshow.html"
     for="collective.gallery.interfaces.IFolder"

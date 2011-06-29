@@ -5,7 +5,7 @@
     <tal:block define="galleryview nocall:context/@@gallery">
     <ul id="slideshow">
         <li tal:repeat="photo galleryview/photos">
-            <h3 photo/title>TinySlideshow v1</h3>
+            <h3 tal:content="photo/title">TinySlideshow v1</h3>
             <span tal:content="photo/url">photos/orange-fish.jpg</span>
             <p tal:content="photo/description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut urna. Mauris nulla. Donec nec mauris. Proin nulla dolor, bibendum et, dapibus in, euismod ut, felis.</p>
             <a href="#"><img tal:attributes="src photo/thumb_url; alt photo/title" src="thumbnails/orange-fish-thumb.jpg" alt="Orange Fish" /></a>
