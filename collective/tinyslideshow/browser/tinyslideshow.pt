@@ -1,0 +1,54 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" encoding="utf-8"
+  metal:use-macro="here/main_template/macros/master" i18n:domain="nmd">
+  <body>
+   <div metal:fill-slot="content-core">
+    <tal:block define="galleryview nocall:context/@@gallery">
+    <ul id="slideshow">
+        <li tal:repeat="photo galleryview/photos">
+            <h3 photo/title>TinySlideshow v1</h3>
+            <span tal:content="photo/url">photos/orange-fish.jpg</span>
+            <p tal:content="photo/description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut urna. Mauris nulla. Donec nec mauris. Proin nulla dolor, bibendum et, dapibus in, euismod ut, felis.</p>
+            <a href="#"><img tal:attributes="src photo/thumb_url; alt photo/title" src="thumbnails/orange-fish-thumb.jpg" alt="Orange Fish" /></a>
+        </li>
+    </ul>
+    <div id="wrapper">
+        <div id="fullsize">
+            <div id="imgprev" class="imgnav" title="Previous Image"></div>
+            <div id="imglink"></div>
+            <div id="imgnext" class="imgnav" title="Next Image"></div>
+            <div id="image"></div>
+            <div id="information">
+                <h3></h3>
+                <p></p>
+            </div>
+        </div>
+        <div id="thumbnails">
+            <div id="slideleft" title="Slide Left"></div>
+            <div id="slidearea">
+                <div id="slider"></div>
+            </div>
+            <div id="slideright" title="Slide Right"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    $('slideshow').style.display='none';
+    $('wrapper').style.display='block';
+    var slideshow=new TINY.slideshow("slideshow");
+    window.onload=function(){
+        slideshow.auto=true;
+        slideshow.speed=5;
+        slideshow.link="linkhover";
+        slideshow.info="information";
+        slideshow.thumbs="slider";
+        slideshow.left="slideleft";
+        slideshow.right="slideright";
+        slideshow.scrollSpeed=4;
+        slideshow.spacing=5;
+        slideshow.active="#fff";
+        slideshow.init("slideshow","image","imgprev","imgnext","imglink");
+    }
+    </script>
+    </tal:block>
+   </div>
+  </body>
+</html>

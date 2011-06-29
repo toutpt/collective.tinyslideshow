@@ -1,0 +1,42 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:browser="http://namespaces.zope.org/browser"
+           i18n_domain="collective.tinyslideshow">
+    <!-- -*- extra stuff goes here -*- -->
+  <browser:resource
+    name="collective.tinyslideshow.css"
+    file="tinyslideshow.css"/>
+  <browser:resource
+    name="collective.tinyslideshow.js"
+    file="tinyslideshow.js"/>
+  <browser:resourceDirectory
+    name="collective.tinyslideshow"
+    directory="images"/>
+  <browser:page
+    name="tinyslideshow.html"
+    for="collective.gallery.interfaces.IFolder"
+    menu="plone_displayviews"
+    title="TinySlideshow"
+    permission="zope.Public"
+    template="tinyslideshow.pt"
+    layer="..interfaces.ITinySlideshowLayer"
+    />
+  <browser:page
+    name="tinyslideshow.html"
+    for="collective.gallery.interfaces.ITopic"
+    menu="plone_displayviews"
+    title="TinySlideshow"
+    permission="zope.Public"
+    template="tinyslideshow.pt"
+    layer="..interfaces.ITinySlideshowLayer"
+    />
+  <browser:page
+    name="tinyslideshow.html"
+    for="collective.gallery.interfaces.ILink"
+    menu="plone_displayviews"
+    title="TinySlideshow"
+    permission="zope.Public"
+    template="tinyslideshow.pt"
+    layer="..interfaces.ITinySlideshowLayer"
+    />
+
+</configure>
